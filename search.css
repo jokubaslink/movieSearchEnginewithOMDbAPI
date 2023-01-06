@@ -1,0 +1,385 @@
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+*{
+    font-family: Open Sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+.container{
+    padding: 35px;
+}
+
+.row{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+li{
+    list-style-type: none;
+}
+
+.red--text{
+    color: #81171b;
+}
+
+.white--text{
+    color: #FFF;
+}
+
+.white--background{
+    background-color:#FFF;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+/*  */
+
+.overlay{
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 326px;
+    background-image: url('./assets/photo-1626814026160-2237a95fc5a0.avif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
+    position: absolute;  
+    z-index: -1;
+}
+
+.overlay--red{
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 326px;
+    background: #540804; /*  #6030B1*/
+    opacity: 0.5;
+    position: absolute;  
+    z-index: -1;
+}
+
+.overlay--red:after{
+    left: 0;
+    bottom: 0;
+    content: "";
+    display: none;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    background-color: blue;
+}
+
+.nav{
+    z-index: 2;
+    height: 326px;
+}
+
+.nav__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__top--title{
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+}
+
+.search__nav--links{
+    display: flex;
+}
+
+.nav__bottom{
+    text-align: center;
+}
+
+.nav__bottom--title{
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.input__wrapper{
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+    height: 60px;
+}
+
+.nav__bottom--input{
+    font-size: 18px;
+    max-width: 500px;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    padding: 1px 2px 1px 20px;
+    border: 3px solid #81171b;
+}
+
+.nav__bottom--input:focus{
+    outline: 2px solid #81171b;
+}
+
+.input__btn--img{
+    position: absolute;
+    right: 18px;
+    top: 11px;
+    width: 36px;
+    color: white;
+    filter: brightness(0.9) invert(.3) sepia(.9) hue-rotate(300deg) saturate(300%);
+}
+
+.search__nav--link--btn{
+    padding: 16px 48px; 
+    border: none;
+    border-radius: 32px;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: not-allowed;
+}
+
+.search__nav--links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search__nav--link{
+    margin-left: 48px;
+}
+
+/* burger menu */
+
+.btn__menu{
+    background-color: transparent;
+    font-size: 25px;
+    text-align: center;
+    border: none;
+    color:#fff;
+    display: none;
+}
+
+.menu__backdrop{
+    border-radius: 30px;
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid #A0AEC0;
+    height: 378px;
+    position:fixed;
+    background-color: white;
+    top: 20px;
+    left: 0;
+    right: 0px;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    padding: 16px 0;
+}
+
+.menu__link{
+    font-size: 18px;
+    font-weight: 700;
+    color:black;
+}
+
+.btn__menu--close{
+    position: absolute;
+    right: 4px;
+    top: 12px;
+    padding: 8px;
+    color: #81171b;
+}
+
+@media (max-width: 1020px){
+    .search__nav--links{
+        display: none;
+    }
+
+    .btn__menu{
+        display: block;
+    }
+    .search__nav--link--btn{
+        color: white;
+        background-color: #81171b;
+    }    
+}
+
+
+/*  */
+
+.search__bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search__bar--left{
+    display: flex;
+    align-items: center;
+}
+
+.search__bar--left--title{
+    font-weight: bold;
+    font-size: 32px;
+    margin-right: 8px;
+}
+
+.search__bar--left--value{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.search__bar--right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#filter{
+    border: 3px solid #540804;
+    padding: 8px 8px;
+}
+
+
+
+/*  */
+
+.search__results{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search__result{
+    border: 3px solid #81171b;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search__result figure{
+    margin: 0 auto;
+}
+
+.search__result img{
+    border-radius: 10px;
+}
+
+.search__result h3{
+    margin-top: 10px;
+}
+
+.search__result--failed,
+.search__result--notchosen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search__result--failed--h1,
+.search__result--notchosen-h1{
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.fa-spinner{
+    font-size: 72px;
+    color: #81171b;
+    animation: spinning 700ms linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spinning {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* responsive design */
+
+@media (max-width: 768px){
+    .nav__bottom--title{
+        font-size: 36px;
+    }
+    .nav__bottom{
+        margin-top: 20px;
+    }
+
+    .search__bar--left--title{
+        font-size: 32px;
+    }
+    
+    .search__bar--left--value{
+        font-size: 32px;
+    }
+
+    .search__bar{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}

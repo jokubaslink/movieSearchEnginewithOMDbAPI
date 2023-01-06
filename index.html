@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="landing-page">
+        <div class="container">
+            <div class="row">
+
+                <nav class="landing__nav">
+
+                    <h1 class="landing__logo--title">Filmux</h1>
+
+                    <ul class="landing__nav--links">
+                        <li class="landing__nav--link">
+                            <a href="./index.html" class="red--text">
+                                Home
+                            </a>
+                        </li>
+                        <li class="landing__nav--link">
+                            <a href="./search.html" class="landing__nav--link--anchor">
+                                Find your movie
+                            </a>
+                        </li>
+                        <li class="landing__nav--link">
+                            <a href="#">
+                                <button class="landing__nav--link--btn red--background uppercase">Contact</button>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="btn__menu" onclick="openMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="menu__backdrop">
+                        <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <ul class="menu__links">
+                            <li class="menu__list">
+                                <a href="./index.html" class="menu__link no-cursor" onclick="closeMenu()">Home</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="./search.html" class="menu__link no-cursor" onclick="closeMenu()">Find your movie</a>
+                            </li>
+                            <li class="menu__list">
+                                <button class="landing__nav--link--btn red--background uppercase">Contact</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <header class="landing__header">
+                    <div class="header__top">
+                        <div class="header__top--wrapper">
+                        <h1 class="header__top-h1">
+                            Lithuania's most awarded movie subscription platform
+                        </h1>
+                        <h2 class="header__top--h2 uppercase">
+                            Find your movie with <span class="red--text">Filmux</span>
+                        </h2>
+                        </div>
+                        <div class="input__wrapper">
+                            <input class="input__input" type="search" placeholder="Search by Movie Title" onkeyup="inputListener(event)" required>
+                            <button class="input__btn red--background" onclick="buttonListener()">
+                                <svg class="input__btn--img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="header__bottom">
+                        <img src="./assets/undraw_awards_fieb.svg" alt="" class="header__bottom--img">
+                    </div>
+                </header>
+
+
+            </div>
+        </div>
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
